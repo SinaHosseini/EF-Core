@@ -1,8 +1,0 @@
-C:\Users\Sina\source\repos\EntityFrameworkCore\WebApplication\obj\Debug\net10.0\rpswa.dswa.cache.json
-C:\Users\Sina\source\repos\EntityFrameworkCore\WebApplication\obj\Debug\net10.0\WebApplication.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Sina\source\repos\EntityFrameworkCore\WebApplication\obj\Debug\net10.0\WebApplication.AssemblyInfoInputs.cache
-C:\Users\Sina\source\repos\EntityFrameworkCore\WebApplication\obj\Debug\net10.0\WebApplication.AssemblyInfo.cs
-C:\Users\Sina\source\repos\EntityFrameworkCore\WebApplication\obj\Debug\net10.0\WebApplication.csproj.CoreCompileInputs.cache
-C:\Users\Sina\source\repos\EntityFrameworkCore\WebApplication\obj\Debug\net10.0\WebApplication.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Sina\source\repos\EntityFrameworkCore\WebApplication\obj\Debug\net10.0\WebApplication.RazorAssemblyInfo.cache
-C:\Users\Sina\source\repos\EntityFrameworkCore\WebApplication\obj\Debug\net10.0\WebApplication.RazorAssemblyInfo.cs
