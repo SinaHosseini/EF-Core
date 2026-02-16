@@ -1,0 +1,17 @@
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\bin\Debug\net10.0\DataLayer.deps.json
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\bin\Debug\net10.0\DataLayer.runtimeconfig.json
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\bin\Debug\net10.0\DataLayer.dll
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\bin\Debug\net10.0\DataLayer.pdb
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\bin\Debug\net10.0\DomainLayer.dll
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\bin\Debug\net10.0\DomainLayer.pdb
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.csproj.AssemblyReference.cache
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.AssemblyInfo.cs
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.csproj.Up2Date
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.dll
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\refint\DataLayer.dll
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.pdb
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.genruntimeconfig.cache
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\ref\DataLayer.dll

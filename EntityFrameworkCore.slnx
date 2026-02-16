@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="DataLayer/DataLayer.csproj" />
+  <Project Path="DomainLayer/DomainLayer.csproj" />
+  <Project Path="WebApp/WebApp.csproj" Id="be176d7c-bccb-47e8-a31c-052681f61412" />
+</Solution>
