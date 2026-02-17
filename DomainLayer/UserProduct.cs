@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DomainLayer
@@ -10,6 +11,7 @@ namespace DomainLayer
         public int UserId { get; set; }
         public int ProductId { get; set; }
         public decimal Price { get; set; }
+        [NotMapped] //Is that for here not in databse
         public string Color { get; set; }
 
         public required Product Product { get; set; }
