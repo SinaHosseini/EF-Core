@@ -10,5 +10,7 @@ namespace DomainLayer
         public int UserId { get; set; }
         public DateTime OrderTime { get; set; }
         public bool IsPay { get; set; }
+
+        public required User User { get; set; }
     }
 }

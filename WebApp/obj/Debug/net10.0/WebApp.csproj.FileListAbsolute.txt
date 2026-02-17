@@ -227,3 +227,4 @@ C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\DomainLa
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\DataLayer.pdb
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\DomainLayer.pdb
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\obj\Debug\net10.0\WebApp.csproj.AssemblyReference.cache
+C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\obj\Debug\net10.0\WebApp.sourcelink.json

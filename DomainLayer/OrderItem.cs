@@ -12,5 +12,8 @@ namespace DomainLayer
         public decimal Price { get; set; }
         public string Color { get; set; }
         public int Count { get; set; }
+
+        public required Order Order { get; set; }
+        public required UserProduct UserProduct { get; set; }
     }
 }

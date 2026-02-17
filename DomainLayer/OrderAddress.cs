@@ -10,5 +10,7 @@ namespace DomainLayer
         public int OrderId { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
+
+        public required Order Order { get; set; }
     }
 }
