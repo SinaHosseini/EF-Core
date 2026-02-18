@@ -15,7 +15,7 @@ Script-Migration
 ```
 This command is for create sql script to run and create database structures with T-SQL.
 
-### Points
+## Model Configure
 ---
 
 > - To add foreign key in a model, should create object from that model as list or single (for one to many or many to many).
@@ -24,7 +24,7 @@ for example:
 
 `public Order Order { get; set; }`
 
-    Order is a class and for foreign key we must create property with -class's name- + Id
+Order is a class and for foreign key we must create property with -class's name- + Id<br>
 `public int OrderId { get; set; }`
 
 ---
@@ -59,7 +59,7 @@ for example:
         `public List<OrderItem> OrderItems { get;set; }`
         
 
-     2. ```
+     2. ```c#
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach(var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(s => s.GetForeignKeys()))
@@ -70,3 +70,51 @@ for example:
         }
         ```
         this code disables Cascade Delete for all tables and relationships in the database.
+
+## Fluent API
+
+1. We have to create .cs file with name --TENTITY--Map and enhanced class from `IEntityTypeConfiguration<TEntity>` and make function `Configure(EntityTypeBuilder<TEntity> builder)`.<br>
+for example:
+    ```c#
+    public class UserMap : IEntityTypeConfiguration<User>
+    {
+        public void Configure(EntityTypeBuilder<User> builder)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    ```
+2. to change table name and schema, write this code:
+    ```c#
+    builder.ToTable("--TABLE-NAME--", "--TABLE_SCHEMA--");
+    ```
+
+3. column attribute:
+    > - **`HasIndex()`** to create index column.
+    > - **`HasKey()`** to set primary key.
+    > - **`Ignore()`** to ignore property in database.
+    > - **`Property()`** to use property for attribute.
+    > - **`IsRequired()`** to not allow null column in database.
+    > - **`MaxLength()`** to make limit length.
+    > - **`HasNoKey()`** set nothing key in table.
+    > - **`HasDefaultValue()`** to set value for property, if it be null.
+
+or write code in AppDBContext with lambada, for example:
+```c#
+modelBuilder.Entity<User>(config =>
+{
+    config.HasKey(c => c.UserId);
+    config.Property(c => c.FullName)
+    .HasDefaultValue("[Name] + ' ' + [Family]");
+});
+```
+or 
+```c#
+modelBuilder.Entity<User>()
+    .Property(b => b.Name).IsRequired();
+```
+
+but if we mapped class in another file we have to call that like this for single:
+`modelBuilder.ApplyConfiguration(new --TENTITY--Map());`<br>
+or call all maps one command:
+`modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDBContext).Assembly);`
