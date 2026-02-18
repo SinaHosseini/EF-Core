@@ -73,7 +73,7 @@ Order is a class and for foreign key we must create property with -class's name-
 
 ## Fluent API
 
-1. We have to create .cs file with name --TENTITY--Map and enhanced class from `IEntityTypeConfiguration<TEntity>` and make function `Configure(EntityTypeBuilder<TEntity> builder)`.<br>
+1. We have to create .cs file with name --TENTITY--Map and inheritance class from `IEntityTypeConfiguration<TEntity>` and make function `Configure(EntityTypeBuilder<TEntity> builder)`.<br>
 for example:
     ```c#
     public class UserMap : IEntityTypeConfiguration<User>

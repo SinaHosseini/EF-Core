@@ -1,4 +1,5 @@
-﻿using DomainLayer;
+﻿using DataLayer.Mapping;
+using DomainLayer;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataLayer
@@ -28,6 +29,20 @@ namespace DataLayer
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            //modelBuilder.Entity<User>(config =>
+            //{
+            //    config.HasKey(c => c.UserId);
+            //    config.Property(c => c.FullName)
+            //    .HasDefaultValue("[Name] + ' ' + [Family]");
+            //});
+
+            //modelBuilder.Entity<User>()
+            //    .Property(b => b.Name).IsRequired();
+
+            //modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDBContext).Assembly);
+            
             base.OnModelCreating(modelBuilder);
         }
     }
