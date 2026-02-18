@@ -21,5 +21,14 @@ namespace DataLayer
             optionsBuilder.UseSqlServer("Server=DESKTOP-ILVS7D3\\SQLEXPRESS;Database=TestDB;User Id=sa;Password=123; Trusted_Connection=True; TrustServerCertificate=True;");
             base.OnConfiguring(optionsBuilder);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            foreach(var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(s => s.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

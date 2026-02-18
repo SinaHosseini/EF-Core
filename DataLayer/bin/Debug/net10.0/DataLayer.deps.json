@@ -912,6 +912,9 @@
         }
       },
       "DomainLayer/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "10.0.3"
+        },
         "runtime": {
           "DomainLayer.dll": {
             "assemblyVersion": "1.0.0.0",

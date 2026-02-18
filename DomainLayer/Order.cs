@@ -12,5 +12,7 @@ namespace DomainLayer
         public bool IsPay { get; set; }
 
         public required User User { get; set; }
+        public OrderAddress OrderAddress { get; set; }
+        public List<OrderItem> OrderItems { get;set; }
     }
 }

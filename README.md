@@ -46,3 +46,27 @@ for example:
 
     > 8. **[Index(nameof(--COLUMN_NAME--), IsUnique = true)]** this is ti create index and make it unique.
 
+---
+
+-   > 1. **[ForeignKey("--TABLE_NAME_OR_COLUMN_NAME")]** is for create relation and foreign key to another table.
+    <br>for example:<br>
+        `[ForeignKey("Order")] public int OrderId { get; set; }`
+        <br> or <br>
+        `[ForeignKey("OrderId")] public required Order Order { get; set; }`
+        <br> and create object from that model, example:<br>
+        `public required Order Order { get; set; }`
+        <br> also create list in parent class, example:<br>
+        `public List<OrderItem> OrderItems { get;set; }`
+        
+
+     2. ```
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            foreach(var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(s => s.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+            base.OnModelCreating(modelBuilder);
+        }
+        ```
+        this code disables Cascade Delete for all tables and relationships in the database.

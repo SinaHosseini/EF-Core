@@ -19,6 +19,12 @@ namespace DomainLayer
         public string Name { get; set; }
         public string Family { get; set; }
         [Required] // make not null column in database.
+        [MaxLength(200)]
         public string Email { get; set; }
+        [NotMapped]
+        public string FullName => Name + Family;
+
+        public List<UserProduct> UserProducts { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }
