@@ -10,12 +10,20 @@ namespace DataLayer.Mapping
         {
             builder.ToTable("Users", "UM");
 
-            builder.HasIndex(b => new { b.Email }).IsUnique();
             builder.HasKey(b => b.UserId);
+            builder.HasIndex(b => new { b.Email })
+                .IsUnique();
             builder.Ignore(b => b.FullName);
-            builder.Property(b => new { b.Name, b.Family })
+            builder.Property(b => b.Name)
                 .IsRequired()
                 .HasMaxLength(50);
+
+            builder.Property(b => b.Family)
+                   .IsRequired()
+                   .HasMaxLength(50);
+
+            builder.Property(b => b.CreateDate)
+                .HasDefaultValue(DateTime.Now);
         }
     }
 }

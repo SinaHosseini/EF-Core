@@ -8,19 +8,19 @@ namespace DomainLayer
 {
     public class UserProduct
     {
-        [Key]
+        //[Key]
         public int UserProductId { get; set; }
         public int UserId { get; set; }
         public int ProductId { get; set; }
         public decimal Price { get; set; }
-        [NotMapped] //Is that for here not in databse
-        [Required]
-        [MaxLength(50)]
+        //[NotMapped] //Is that for here not in databse
+        //[Required]
+        //[MaxLength(50)]
         public string Color { get; set; }
 
-        [ForeignKey("ProductId")]
+        //[ForeignKey("ProductId")]
         public required Product Product { get; set; }
-        [ForeignKey("UserId")]
+        //[ForeignKey("UserId")]
         public required User User { get; set; }
         public List<OrderItem> OrderItems { get; set; }
     }

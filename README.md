@@ -98,6 +98,9 @@ for example:
     > - **`MaxLength()`** to make limit length.
     > - **`HasNoKey()`** set nothing key in table.
     > - **`HasDefaultValue()`** to set value for property, if it be null.
+    > - **`IsUnicode()`** to set varchar instead nvarchar.
+    > - **`HasColumnName()`** to change name in database.
+    > - **`HasColumnType()`** to change column type in database.
 
 or write code in AppDBContext with lambada, for example:
 ```c#
@@ -118,3 +121,23 @@ but if we mapped class in another file we have to call that like this for single
 `modelBuilder.ApplyConfiguration(new --TENTITY--Map());`<br>
 or call all maps one command:
 `modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDBContext).Assembly);`
+
+4. `modelBuilder.HasDefaultSchema("DBO");` is for set default schema.
+
+5. this code set a relation one to many in database.
+    ```c#
+        builder.HasOne(b => b.TEntity)
+        .WithMany(b => b.TEntity)
+        .HasForeignKey(b => b.ColumnId);
+    ```
+
+    also for one to one relation we can use this code:
+    ```c#
+    builder.HasOne(b => b.TEntity)
+    .WithOne(b => b.TEntity)
+    .HasForeignKey<TEntity>(b => b.ColumnId);
+    ```
+
+    > **`OnDelete(DeleteBehavior.Restrict/Cascade/NoAction/SetNull)`** determines how it should behave when its parent is deleted. it usually come after .HasForeignKey(). example:<br>
+    `builder.HasOne(b => b.Order).WithMany(b => b.OrderItems).HasForeignKey(b => b.OrderId).OnDelete(DeleteBehavior.Cascade);`
+

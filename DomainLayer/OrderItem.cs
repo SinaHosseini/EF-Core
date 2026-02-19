@@ -8,20 +8,20 @@ namespace DomainLayer
 {
     public class OrderItem
     {
-        [Key]
+        //[Key]
         public int OrderItemId { get; set; }
         // [ForeignKey("Order")]
         public int OrderId { get; set; }
         public int UserProductId { get; set; }
         public decimal Price { get; set; }
-        [Required]
-        [MaxLength(50)]
+        //[Required]
+        //[MaxLength(50)]
         public string Color { get; set; }
         public int Count { get; set; }
 
-        [ForeignKey("OrderId")]
+        //[ForeignKey("OrderId")]
         public required Order Order { get; set; }
-        [ForeignKey("UserProductId")]
+        //[ForeignKey("UserProductId")]
         public required UserProduct UserProduct { get; set; }
     }
 }

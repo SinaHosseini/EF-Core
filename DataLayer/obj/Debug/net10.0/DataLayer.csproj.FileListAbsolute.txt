@@ -9,10 +9,10 @@ C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataL
 C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.AssemblyInfoInputs.cache
 C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.AssemblyInfo.cs
 C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.sourcelink.json
 C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.csproj.Up2Date
 C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\refint\DataLayer.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.pdb
 C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.genruntimeconfig.cache
 C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\ref\DataLayer.dll
-C:\Users\Sina\source\repos\EntityFrameworkCore\DataLayer\obj\Debug\net10.0\DataLayer.sourcelink.json

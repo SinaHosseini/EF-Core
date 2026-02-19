@@ -7,15 +7,15 @@ namespace DomainLayer
 {
     public class Product
     {
-        [Key]
+        //[Key]
         public int ProductId { get; set; }
-        [Required]
-        [MaxLength(80)]
+        //[Required]
+        //[MaxLength(80)]
         public string ProductName { get; set; }
-        [Required]
-        [MaxLength(110)]
+        //[Required]
+        //[MaxLength(110)]
         public string ImageName { get; set; }
-        [Required(AllowEmptyStrings = false)]
+        //[Required(AllowEmptyStrings = false)]
         public string ProductDescription { get; set; }
 
         public List<UserProduct> UserProducts { get; set; }
