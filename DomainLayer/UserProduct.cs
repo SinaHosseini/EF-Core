@@ -12,10 +12,7 @@ namespace DomainLayer
         private Product _product;
         private ILazyLoader _lazyLoaderl;
 
-        public UserProduct()
-        {
-
-        }
+        public UserProduct() { }    
 
         public UserProduct(ILazyLoader lazyLoader)
         {
