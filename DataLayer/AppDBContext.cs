@@ -26,10 +26,10 @@ namespace DataLayer
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.HasDefaultSchema("DBO");
-            foreach(var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(s => s.GetForeignKeys()))
-            {
-                relationship.DeleteBehavior = DeleteBehavior.Restrict;
-            }
+            //foreach(var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(s => s.GetForeignKeys()))
+            //{
+            //    relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            //}
 
             //modelBuilder.Entity<User>(config =>
             //{
