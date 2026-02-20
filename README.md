@@ -185,3 +185,34 @@ var context = new AppDBContext();
     context.TEntity.Update(TEntity);
     ```
 
+## Eager Loading
+
+in this loading we use 2 methods with name `Include()` and `ThenInclude()`.
+
+1. at first we create object from our AppDBContext:
+    ``` c#
+    using var context = new AppDBCContext();
+    ```
+
+2. we use methods to make joins and get data.
+- **`Include()`** this method make `INNER JOIN` to some table with ForeignKey we made before. usage example:
+    ```c#
+    var userProducts = context.UserProducts
+        .Include(c => c.User)
+        .Include(c => c.Product)
+        .ToList();
+    ```
+- **`ThenInclude()`** we use ThenInclude() to connect to the third table, which is in our second table, with which we made a JOIN. Usage example:
+    ```c#
+    var userProducts = context.UserProducts
+        .Include(c => c.User)
+            .ThenInclude(c => c.Order)
+        .Include(c => c.Product)
+        .ToList();
+    ```
+- also we can make condition to get intended data. usage example:
+    ```c#
+    var userProducts = context.UserProducts
+        .Include(c => c.OrderItems.Where(r => r.IsPay == true))
+        .ToList();
+    ```
