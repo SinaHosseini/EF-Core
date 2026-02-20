@@ -90,19 +90,19 @@ for example:
     ```
 
 3. column attribute:
-     - **`HasIndex()`** to create index column.
-     - **`HasKey()`** to set primary key.
-     - **`Ignore()`** to ignore property in database.
-     - **`Property()`** to use property for attribute.
-     - **`IsRequired()`** to not allow null column in database.
-     - **`MaxLength()`** to make limit length.
-     - **`HasNoKey()`** set nothing key in table.
-     - **`HasDefaultValue()`** to set value for property, if it be null.
-     - **`IsUnicode()`** to set varchar instead nvarchar.
-     - **`HasColumnName()`** to change name in database.
-     - **`HasColumnType()`** to change column type in database.
-     - **`HasData()`** to add data in database when migrate.
-     - **`HasConversion()`** this method use to convert data to database. usage example: 
+    - **`HasIndex()`** to create index column.
+    - **`HasKey()`** to set primary key.
+    - **`Ignore()`** to ignore property in database.
+    - **`Property()`** to use property for attribute.
+    - **`IsRequired()`** to not allow null column in database.
+    - **`MaxLength()`** to make limit length.
+    - **`HasNoKey()`** set nothing key in table.
+    - **`HasDefaultValue()`** to set value for property, if it be null.
+    - **`IsUnicode()`** to set varchar instead nvarchar.
+    - **`HasColumnName()`** to change name in database.
+    - **`HasColumnType()`** to change column type in database.
+    - **`HasData()`** to add data in database when migrate.
+    - **`HasConversion()`** this method use to convert data to database. usage example: 
         ```c#
         public class Product
         {
@@ -163,6 +163,8 @@ for example:
             .HasConversion(conversion);
         ``` 
         > to more info read [Microsoft EntityFrameWork core value convertor](https://learn.microsoft.com/en-us/ef/core/modeling/value-conversions?tabs=data-annotations#built-in-converters)
+
+    - **`HasQueryFilter()`** to apply global filter.
         
 
 or write code in AppDBContext with lambada, for example:
@@ -247,6 +249,24 @@ var context = new AppDBContext();
     context.TEntity.Update(TEntity);
     ```
 
+5. to add a list to database we use `AddRange()`. usage example:
+    ```c#
+    var products = new List<Product>(
+        {
+            new Product
+            { --DATA-- },
+
+            new Product
+            { --DATA-- }
+        }
+    );
+
+    context.Product.AddRange(products);
+    context.SaveChange();
+    ```
+
+6. **`IgnoreQueryFilter()`** to ignore global query filter.
+
 ## Eager Loading
 
 in this loading we use 2 methods with name `Include()` and `ThenInclude()`.
@@ -328,3 +348,6 @@ this way is so heavy and load all data relations and no recommended.
         public List<OrderItem> OrderItems { get; set; }
     }
     ```
+---
+### IQueryable vs IEnumerable
+The difference between `IEnumerable` and `IQueryable` is that `IEnumerable` executes commands logically on the <u>client side</u>, and `IQueryable` converts the written commands into <u>SQL queries</u> and then executes them.
