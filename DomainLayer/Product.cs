@@ -17,6 +17,7 @@ namespace DomainLayer
         public string ImageName { get; set; }
         //[Required(AllowEmptyStrings = false)]
         public string ProductDescription { get; set; }
+        public List<string> Tags { get; set; }
 
         public virtual List<UserProduct> UserProducts { get; set; }
     }

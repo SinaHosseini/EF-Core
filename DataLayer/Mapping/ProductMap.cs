@@ -1,6 +1,7 @@
 ﻿using DomainLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Text.Json;
 
 namespace DataLayer.Mapping
 {
@@ -17,9 +18,13 @@ namespace DataLayer.Mapping
                 .HasMaxLength(110);
             builder.Property(b => b.ProductDescription)
                 .IsRequired();
+            builder.Property(b => b.Tags)
+                .HasConversion(
+                data => JsonSerializer.Serialize(data),
+                data => JsonSerializer.Deserialize<List<string>>(data));
 
             builder.HasData(new List<Product>
-            { 
+            {
                 new Product
                 {
                     ProductId = 1,

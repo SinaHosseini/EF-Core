@@ -102,6 +102,68 @@ for example:
      - **`HasColumnName()`** to change name in database.
      - **`HasColumnType()`** to change column type in database.
      - **`HasData()`** to add data in database when migrate.
+     - **`HasConversion()`** this method use to convert data to database. usage example: 
+        ```c#
+        public class Product
+        {
+            public int ProductId { get; set; }
+            public string ProductName { get; set; }
+            public string ImageName { get; set; }
+            public string ProductDescription { get; set; }
+            public List<string> Tags { get; set; } // this our conversion property
+
+            public List<UserProduct> UserProducts { get; set; }
+        }
+        ```
+        then configure in *ProductMap.cs* like this:
+        ```c#
+        builder.Property(b => b.Tags)
+            .HasConversion(
+            data => JsonSerializer.Serialize(data),
+            data => JsonSerializer.Deserialize<List<string>>(data));
+        ```
+        or for enums we can write like this:
+        ```c#
+        public class Order
+        {
+            public int OrderId { get; set; }
+            public int UserId { get; set; }
+            public DateTime OrderTime { get; set; }
+            public OrderStatus Status { get; set; }
+
+            public User User { get; set; }
+            public OrderAddress OrderAddress { get; set; }
+            public List<OrderItem> OrderItems { get;set; }
+        }
+
+        public enum OrderStatus
+        {
+            IsPay,
+            Canceled,
+            Finally
+        }
+        ```
+        ```c#
+        // first way, manually
+        builder.Property(b => b.Status)
+            .HasConversion(v => v.ToString(),
+            v => (OrderStatus)Enum.Parse(typeof(OrderStatus), v));
+        // second way, smart
+        builder.Property(b => b.Status)
+            .HasConversion<string>();
+        // third way, ef core type
+        builder.Property(b => b.Status)
+            .HasConversion(new EnumToStringConverter<OrderStatus>());
+        // forth way, create value 
+        var conversion = new ValueConverter<OrderStatus, string>(
+            data => data.ToString(),
+            data => (OrderStatus)Enum.Parse(typeof(OrderStatus), data));
+
+        builder.Property(b => b.Status)
+            .HasConversion(conversion);
+        ``` 
+        > to more info read [Microsoft EntityFrameWork core value convertor](https://learn.microsoft.com/en-us/ef/core/modeling/value-conversions?tabs=data-annotations#built-in-converters)
+        
 
 or write code in AppDBContext with lambada, for example:
 ```c#
@@ -266,4 +328,3 @@ this way is so heavy and load all data relations and no recommended.
         public List<OrderItem> OrderItems { get; set; }
     }
     ```
-    

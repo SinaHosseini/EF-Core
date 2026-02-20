@@ -1,6 +1,7 @@
 ﻿using DomainLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataLayer.Mapping
 {
@@ -12,6 +13,22 @@ namespace DataLayer.Mapping
 
             builder.HasKey(x => x.OrderId);
 
+            //builder.Property(b => b.Status)
+            //    .HasConversion(v => v.ToString(),
+            //    v => (OrderStatus)Enum.Parse(typeof(OrderStatus), v));
+
+            //builder.Property(b => b.Status)
+            //    .HasConversion<string>();
+
+            //builder.Property(b => b.Status)
+            //    .HasConversion(new EnumToStringConverter<OrderStatus>());
+
+            var conversion = new ValueConverter<OrderStatus, string>(
+                data => data.ToString(),
+                data => (OrderStatus)Enum.Parse(typeof(OrderStatus), data));
+
+            builder.Property(b => b.Status)
+                .HasConversion(conversion);
         }
     }
 }
