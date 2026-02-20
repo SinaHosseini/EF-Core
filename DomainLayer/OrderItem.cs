@@ -20,8 +20,8 @@ namespace DomainLayer
         public int Count { get; set; }
 
         //[ForeignKey("OrderId")]
-        public required Order Order { get; set; }
+        public virtual Order Order { get; set; }
         //[ForeignKey("UserProductId")]
-        public required UserProduct UserProduct { get; set; }
+        public virtual UserProduct UserProduct { get; set; }
     }
 }

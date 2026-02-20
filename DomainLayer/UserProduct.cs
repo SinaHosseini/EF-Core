@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,6 +9,18 @@ namespace DomainLayer
 {
     public class UserProduct
     {
+        private Product _product;
+        private ILazyLoader _lazyLoaderl;
+
+        public UserProduct()
+        {
+
+        }
+
+        public UserProduct(ILazyLoader lazyLoader)
+        {
+            _lazyLoaderl = lazyLoader;
+        }
         //[Key]
         public int UserProductId { get; set; }
         public int UserId { get; set; }
@@ -19,9 +32,13 @@ namespace DomainLayer
         public string Color { get; set; }
 
         //[ForeignKey("ProductId")]
-        public Product Product { get; set; }
+        public Product Product
+        {
+            get => _lazyLoaderl.Load(this, ref _product);
+            set => _product = value;
+        }
         //[ForeignKey("UserId")]
-        public User User { get; set; }
-        public List<OrderItem> OrderItems { get; set; }
+        public virtual User User { get; set; }
+        public virtual List<OrderItem> OrderItems { get; set; }
     }
 }

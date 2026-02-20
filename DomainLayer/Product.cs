@@ -18,6 +18,6 @@ namespace DomainLayer
         //[Required(AllowEmptyStrings = false)]
         public string ProductDescription { get; set; }
 
-        public List<UserProduct> UserProducts { get; set; }
+        public virtual List<UserProduct> UserProducts { get; set; }
     }
 }

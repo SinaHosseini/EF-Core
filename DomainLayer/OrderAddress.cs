@@ -19,6 +19,6 @@ namespace DomainLayer
         public string Address { get; set; }
 
         //[ForeignKey("OrderId")]
-        public required Order Order { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

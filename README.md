@@ -232,4 +232,38 @@ in this loading we use 2 methods with name `Include()` and `ThenInclude()`.
 - **`Query()`** we can filter (`Where()`), sort (`OrderBy()`), pagination (`Skip()` or `Take()`) or projection (`Select()`).
     > we can use `Load()` after that or put it into a variable.
 
+## Lazy Loading
+1. In first way we can install package `Microsoft.EntityFrameWorkCore.Proxies`.
+then we have to add <u>*virtual*</u> to models relations.
+this way is so heavy and load all data relations and no recommended.
 
+2. in second way we add ILazyLoader to our model and create 2 ctor, one with no action and second fill _lazy loader. then we set get and set manually. usage example:
+    ```c#
+    public class UserProduct
+    {
+        private Product _product;
+        private ILazyLoader _lazyLoader;
+
+        public UserProduct() { }    
+
+        public UserProduct(ILazyLoader lazyLoader)
+        {
+            _lazyLoader = lazyLoader;
+        }
+
+        public int UserProductId { get; set; }
+        public int UserId { get; set; }
+        public int ProductId { get; set; }
+        public decimal Price { get; set; }
+        public string Color { get; set; }
+
+        public Product Product
+        {
+            get => _lazyLoader.Load(this, ref _product);
+            set => _product = value;
+        }
+        public User User { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
+    }
+    ```
+    

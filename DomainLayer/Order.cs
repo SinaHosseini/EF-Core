@@ -11,8 +11,8 @@ namespace DomainLayer
         public DateTime OrderTime { get; set; }
         public bool IsPay { get; set; }
 
-        public required User User { get; set; }
-        public OrderAddress OrderAddress { get; set; }
-        public List<OrderItem> OrderItems { get;set; }
+        public virtual User User { get; set; }
+        public virtual OrderAddress OrderAddress { get; set; }
+        public virtual List<OrderItem> OrderItems { get;set; }
     }
 }

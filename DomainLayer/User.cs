@@ -25,7 +25,7 @@ namespace DomainLayer
         //[NotMapped]
         public string FullName => Name + Family;
 
-        public List<UserProduct> UserProducts { get; set; }
-        public List<Order> Orders { get; set; }
+        public virtual List<UserProduct> UserProducts { get; set; }
+        public virtual List<Order> Orders { get; set; }
     }
 }
