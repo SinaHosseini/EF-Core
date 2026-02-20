@@ -101,6 +101,7 @@ for example:
     > - **`IsUnicode()`** to set varchar instead nvarchar.
     > - **`HasColumnName()`** to change name in database.
     > - **`HasColumnType()`** to change column type in database.
+    > - **`HasData()`** to add data in database when migrate.
 
 or write code in AppDBContext with lambada, for example:
 ```c#
