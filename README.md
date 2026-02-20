@@ -18,7 +18,7 @@ This command is for create sql script to run and create database structures with
 ## Model Configure
 ---
 
-> - To add foreign key in a model, should create object from that model as list or single (for one to many or many to many).
+To add foreign key in a model, should create object from that model as list or single (for one to many or many to many).
 
 for example:
 
