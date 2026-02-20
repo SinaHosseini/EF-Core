@@ -216,3 +216,20 @@ in this loading we use 2 methods with name `Include()` and `ThenInclude()`.
         .Include(c => c.OrderItems.Where(r => r.IsPay == true))
         .ToList();
     ```
+
+## Explicit Loading
+
+1. at first we create object from our AppDBContext:
+    ``` c#
+    using var context = new AppDBCContext();
+    ```
+
+2. Explicit loading attribute:
+- **`Entry()`** get our entity to load data. this is our entry.
+- **`Reference()`** is for single navigation property. like: `public Order Order { get; set; }`
+- **`Collection()`** is for collection navigation property. like: `public ICollection<Order> Orders { get; set; }`
+- **`Load()`** load data after choose type relation. like: `context.Entry(author).Collection(a => a.Posts).Load();
+- **`Query()`** we can filter (`Where()`), sort (`OrderBy()`), pagination (`Skip()` or `Take()`) or projection (`Select()`).
+    > we can use `Load()` after that or put it into a variable.
+
+
