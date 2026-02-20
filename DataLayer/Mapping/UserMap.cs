@@ -24,6 +24,19 @@ namespace DataLayer.Mapping
 
             builder.Property(b => b.CreateDate)
                 .HasDefaultValue(DateTime.Now);
+
+
+            builder.HasData(new List<User>
+            {
+                new User
+                {
+                    UserId = 1,
+                    Name = "Admin",
+                    Family = "Admini",
+                    Email = "admin@admin.com",
+                    CreateDate = DateTime.Now
+                }
+            });
         }
     }
 }

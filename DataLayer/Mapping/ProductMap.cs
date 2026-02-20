@@ -17,6 +17,17 @@ namespace DataLayer.Mapping
                 .HasMaxLength(110);
             builder.Property(b => b.ProductDescription)
                 .IsRequired();
+
+            builder.HasData(new List<Product>
+            { 
+                new Product
+                {
+                    ProductId = 1,
+                    ProductName = "Test",
+                    ImageName = "Test.png",
+                    ProductDescription = "Testtttttt",
+                }
+            });
         }
     }
 }

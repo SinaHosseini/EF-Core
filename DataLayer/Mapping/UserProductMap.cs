@@ -20,6 +20,18 @@ namespace DataLayer.Mapping
             builder.HasOne(b => b.Product)
                 .WithMany(b => b.UserProducts)
                 .HasForeignKey(b => b.ProductId);
+
+            builder.HasData(new List<UserProduct>
+            {
+                new UserProduct
+                {
+                    UserProductId = 1,
+                    UserId = 1,
+                    ProductId = 1,
+                    Price = 1000000,
+                    Color = "Green"
+                }
+            });
         }
     }
 }

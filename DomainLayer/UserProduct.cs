@@ -19,9 +19,9 @@ namespace DomainLayer
         public string Color { get; set; }
 
         //[ForeignKey("ProductId")]
-        public required Product Product { get; set; }
+        public Product Product { get; set; }
         //[ForeignKey("UserId")]
-        public required User User { get; set; }
+        public User User { get; set; }
         public List<OrderItem> OrderItems { get; set; }
     }
 }
