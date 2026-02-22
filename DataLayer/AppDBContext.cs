@@ -22,6 +22,8 @@ namespace DataLayer
             optionsBuilder
                 //.UseChangeTrackingProxies() // add proxies to lazy loading
                 .UseSqlServer("Server=DESKTOP-ILVS7D3\\SQLEXPRESS;Database=TestDB;User Id=sa;Password=123; Trusted_Connection=True; TrustServerCertificate=True;");
+
+            //optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             base.OnConfiguring(optionsBuilder);
         }
 

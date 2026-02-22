@@ -10,6 +10,7 @@
         "dependencies": {
           "DomainLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "10.0.3",
+          "Microsoft.EntityFrameworkCore.Proxies": "10.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "10.0.3"
         },
@@ -40,6 +41,17 @@
           "lib/net8.0/Azure.Identity.dll": {
             "assemblyVersion": "1.14.2.0",
             "fileVersion": "1.1400.225.36004"
+          }
+        }
+      },
+      "Castle.Core/5.2.1": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "9.0.4"
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.1.0"
           }
         }
       },
@@ -484,6 +496,20 @@
         },
         "runtime": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "assemblyVersion": "10.0.3.0",
+            "fileVersion": "10.0.326.7603"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Proxies/10.0.3": {
+        "dependencies": {
+          "Castle.Core": "5.2.1",
+          "Microsoft.EntityFrameworkCore": "10.0.3",
+          "Microsoft.Extensions.Caching.Memory": "10.0.3",
+          "Microsoft.Extensions.Logging": "10.0.3"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.Proxies.dll": {
             "assemblyVersion": "10.0.3.0",
             "fileVersion": "10.0.326.7603"
           }
@@ -944,6 +970,13 @@
       "path": "azure.identity/1.14.2",
       "hashPath": "azure.identity.1.14.2.nupkg.sha512"
     },
+    "Castle.Core/5.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wHARzQA695jwwKreOzNsq54KiGqKP38tv8hi8e2FXDEC/sA6BtrX90tVPDkOfVu13PbEzr00TCV8coikl+D1Iw==",
+      "path": "castle.core/5.2.1",
+      "hashPath": "castle.core.5.2.1.nupkg.sha512"
+    },
     "Humanizer.Core/2.14.1": {
       "type": "package",
       "serviceable": true,
@@ -1041,6 +1074,13 @@
       "sha512": "sha512-OPZ/u7fONQFmnyUIDB8SeJtKnyFkj1zJsZ0Ke2Cp17q8hYs6jGmYEFd6Ne4Hdcd6auUdFdV7di+uFo2w+L34NA==",
       "path": "microsoft.entityframeworkcore.design/10.0.3",
       "hashPath": "microsoft.entityframeworkcore.design.10.0.3.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Proxies/10.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UvSX5/7x9hvtK0j/bNDlR/T+/eSqXzOr2PW3I6C2EDRMJiDjhDAnHoEslmY3N+flq3iEEkIMznyMP+lpz2VBdQ==",
+      "path": "microsoft.entityframeworkcore.proxies/10.0.3",
+      "hashPath": "microsoft.entityframeworkcore.proxies.10.0.3.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/10.0.3": {
       "type": "package",

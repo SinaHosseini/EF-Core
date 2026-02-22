@@ -9,6 +9,7 @@ C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\WebApp.d
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\WebApp.pdb
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Azure.Core.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Azure.Identity.dll
+C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Castle.Core.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Humanizer.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
@@ -23,6 +24,7 @@ C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsof
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Sina\source\repos\EntityFrameworkCore\WebApp\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll

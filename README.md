@@ -351,3 +351,11 @@ this way is so heavy and load all data relations and no recommended.
 ---
 ### IQueryable vs IEnumerable
 The difference between `IEnumerable` and `IQueryable` is that `IEnumerable` executes commands logically on the <u>client side</u>, and `IQueryable` converts the written commands into <u>SQL queries</u> and then executes them.
+
+---
+
+### Change Tracker
+this tracker come all data in memory by indexing and do crud with its own things, to off this we can use **`AsNoTracking()`** in queries or off global by **`optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);`** command in AppDbContext.
+
+---
+
