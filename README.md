@@ -359,3 +359,10 @@ this tracker come all data in memory by indexing and do crud with its own things
 
 ---
 
+## Database First
+this method use when we create database firs.
+to add models and DbContext to program use this command in terminal.
+```
+Scaffold-DbContext "--CONNECTION_STRING" --PROVIDER-- -outputDir --FOLDER_NAME_MODELS--
+```
+like: `Scaffold-DbContext 'Server=ServerName;Database=DatabaseName;User Id=YourUserId;Password=YourPassword; Trusted_Connection=True; TrustServerCertificate=True;' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models`
